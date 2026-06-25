@@ -12,6 +12,7 @@ header {
     align-items: center;
     gap: 100px;
     color: white;
+    
 
 }
 
@@ -25,6 +26,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 }
 .img img{
     border-radius: 50%;
@@ -40,6 +42,7 @@ header {
     border-radius: 10px;
     background-color: blue;
     color: white;
+    text-decoration: none;
 
 
 
@@ -83,4 +86,42 @@ body {
     gap: 200px;
     border-radius: 20px;
     
+}
+.projet{
+    padding: 40px;
+   
+    
+
+}
+.site{
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgb(0, 0, 0, 0.2);
+    border: 1px solid rgb(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-right: 900px;
+
+    
+}
+.see a{
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    border: 2px solid blue;
+    color: rgb(67, 57, 146);
+    border-radius: 5px ;
+    max-width: 120px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+.meteo{
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgb(0, 0, 0, 0.2);
+    border: 1px solid rgb(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-right: 900px;
 }
