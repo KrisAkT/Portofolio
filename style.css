@@ -1,0 +1,87 @@
+header {
+    background-color: rgb(1, 1, 43);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+    color: white;
+
+}
+
+.presentation{
+    h4{color: blue;}
+    h1{color: white;}
+    h3{color: blue;}
+    background-color: rgb(10, 10, 43);
+    p{color: white;}
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.img img{
+    border-radius: 50%;
+    width: 300px ;
+} 
+
+   
+
+
+
+.elem a {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: blue;
+    color: white;
+
+
+
+
+}
+
+body {
+    margin: 0;
+}
+
+.button {
+    padding: 20px 20px;
+    border-radius: 15px;
+    background-color: rgb(163, 163, 168);
+}
+
+.about {
+    padding: 40px;
+
+}
+.plus a{
+    background-color: blue;
+    padding: 5px;
+    border: 5px solid blue;
+    color: rgb(237, 227, 227);
+    border-radius: 5px ;
+    max-width: 120px;
+    margin-top: 10px;
+    
+    
+}
+.competences{
+    background-color: rgb(229, 229, 255);
+    padding: 40px;
+    
+
+}
+.comp{
+    background-color: white;
+    display: flex;
+    padding: 20px 20px;
+    gap: 200px;
+    border-radius: 20px;
+    
+}
