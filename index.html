@@ -1,90 +1,394 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+<!-- ✅ CORRECTION 1 : lang="en" → lang="fr"
+     Le site est en français, donc on déclare la langue française
+     pour l'accessibilité et le référencement (SEO). -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio-Kris</title>
+
+    <!-- ✅ CORRECTION 2 : Titre de la page plus descriptif -->
+    <title>AKOUETE Kris — Portfolio Développeur Web</title> 
+
+    <!-- ✅ CORRECTION 3 : Ajout d'une meta description pour le SEO -->
+    <meta name="description" content="Portfolio de AKOUETE Kris, élève développeur web débutant basé à Lomé, Togo.">
+
+    <!-- Font Awesome pour les icônes (déjà présent, bien joué !) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ✅ CORRECTION 4 : Ajout de Google Fonts (Inter) pour une typographie moderne
+         Sans cela, le site utilisait la police par défaut du navigateur,
+         ce qui ne correspond pas au design. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
-
 </head>
-<header>
-    <div class="tete">
-        KRIS.PORTOFOLIO
-    </div>
-    <div class="menu">
 
-        <a href="#">Accueil</a>
-        <a href="#">A propos</a>
-        <a href="#">Compétence</a>
-        <a href="#">Projet</a>
-        <a href="#">Contact</a>
-
-        <a class="button" href="#">Télecharger mon CV</a>
-
-    </div>
-
-
-</header>
+<!-- ✅ CORRECTION 5 : La balise <body> doit englober tout le contenu visible,
+     y compris le <header>. L'élève avait mis <header> EN DEHORS de <body>,
+     ce qui est une erreur de structure HTML fondamentale. -->
 
 <body>
-    <section class="presentation">
-        <div class="lol">
-            <h4>Bonjour, je suis</h4>
-            <h1>AKOUETE Kris</h1>
-            <h3>Développeur web débutant</h3>
-            <p>Passioné par la création des sites web modernes <br> et fonctionnels. J'aime transformer des iddées en
-                <br>expérience numériques uniques.
-            </p>
-            <div class="kio">
-                <nav class="elem">
-                    <a href="#">A propos de moi</a>
-                    <a href="#">Me Contacter</a>
 
-                </nav>
+    <!-- ========== NAVIGATION ========== -->
+    <!-- ✅ CORRECTION 6 : On utilise la balise <header> pour la navigation principale.
+         C'est une balise sémantique HTML5 qui indique clairement le rôle de cette zone. -->
+    <header>
+        <div class="logo">
+            <!-- ✅ CORRECTION 7 : Le logo a deux couleurs : "KRIS." en bleu et "PORTFOLIO" en blanc.
+                 On utilise un <span class="logo-accent"> pour colorer seulement une partie du texte.
+                 L'élève avait tout en une seule couleur sans distinction. -->
+            <span class="logo-accent">KRIS.</span> PORTFOLIO
+        </div>
+
+        <nav class="menu">
+            <!-- ✅ CORRECTION 8 : Les liens de navigation doivent pointer vers les
+                 sections correspondantes avec des ancres (#accueil, #apropos, etc.)
+                 et non vers "#" vide. Cela permet de naviguer dans la page en un clic.
+                 L'élève avait href="#" sur tous les liens, ce qui ne fonctionnait pas. -->
+            <a href="#accueil" class="nav-link active">Accueil</a>
+            <a href="#apropos" class="nav-link">À propos</a>
+            <a href="#competences" class="nav-link">Compétences</a>
+            <a href="#projets" class="nav-link">Projets</a>
+            <a href="#contact" class="nav-link">Contact</a>
+
+            <!-- ✅ CORRECTION 9 : Le bouton CV doit avoir une icône téléchargement (fa-download).
+                 L'élève n'avait pas mis d'icône. On utilise Font Awesome avec <i class="fas fa-download">.
+                 Dans le design, c'est un bouton bleu arrondi bien visible. -->
+            <a class="btn-cv" href="#">
+                <i class="fas fa-download"></i> Télécharger CV
+            </a>
+        </nav>
+    </header>
+
+    <!-- ========== SECTION HÉROS (Accueil) ========== -->
+    <!-- ✅ CORRECTION 10 : Chaque section doit avoir un id= correspondant au lien du menu.
+         Sans id="accueil", le lien href="#accueil" dans le menu ne fonctionne pas.
+         L'élève n'avait aucun id sur ses sections. -->
+    <section class="presentation" id="accueil">
+        <div class="hero-text">
+            <!-- ✅ CORRECTION 11 : "Bonjour, je suis" n'est PAS un titre, c'est un texte décoratif.
+                 L'élève utilisait <h4> ce qui est incorrect sémantiquement.
+                 On utilise un <p> avec la classe "greeting" pour lui donner son style bleu. -->
+            <p class="greeting">Bonjour, je suis</p>
+
+            <!-- ✅ CORRECTION 12 : Il ne doit y avoir qu'UN SEUL <h1> par page.
+                 C'est la règle fondamentale du SEO et de l'accessibilité.
+                 Le <h1> contient le nom de la personne, qui est l'élément le plus important. -->
+            <h1>AKOUETE Kris</h1>
+
+            <!-- ✅ CORRECTION 13 : Le titre de poste stylisé n'est pas une hiérarchie de titre.
+                 L'élève utilisait <h3>. On utilise un <p> avec une classe dédiée "job-title".
+                 La sémantique HTML doit refléter l'importance du contenu, pas son style visuel. -->
+            <p class="job-title">Développeur Web Débutant</p>
+
+            <p class="hero-desc">
+                Passionné par la création de sites web modernes
+                et fonctionnels. J'aime transformer des idées en
+                expériences numériques uniques.
+            </p>
+
+            <!-- ✅ CORRECTION 14 : Les boutons CTA doivent avoir des icônes comme dans le design.
+                 L'élève n'avait aucune icône sur ses boutons.
+                 "À propos de moi" → icône fa-user / "Me contacter" → icône fa-envelope.
+                 Le <div class="hero-buttons"> permet de les mettre côte à côte avec flexbox. -->
+            <div class="hero-buttons">
+                <a href="#apropos" class="btn-primary">
+                    <i class="fas fa-user"></i> À propos de moi
+                </a>
+                <a href="#contact" class="btn-secondary">
+                    <i class="fas fa-envelope"></i> Me contacter
+                </a>
+            </div>
+
+            <!-- ✅ CORRECTION 15 : Les icônes réseaux sociaux (GitHub, LinkedIn, Instagram)
+                 étaient complètement absentes du code de l'élève.
+                 Dans le design, elles apparaissent sous les boutons sous forme de cercles.
+                 On utilise aria-label pour l'accessibilité (les lecteurs d'écran lisent le label). -->
+            <div class="social-links">
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
-        <div class="img">
-            <img src="AKT.jpeg" alt="photo" width=300>
+
+        <!-- ✅ CORRECTION 16 : La photo de profil doit être dans un conteneur .hero-image
+             avec un sous-conteneur .image-circle pour créer le cercle bleu décoratif.
+             L'élève avait mis border-radius:50% directement sur <img> sans le conteneur,
+             ce qui ne permettait pas l'effet de cercle avec bordure visible dans le design.
+             object-fit: cover (dans le CSS) évite que l'image se déforme. -->
+        <div class="hero-image">
+            <div class="image-circle">
+                <img src="AKT.jpeg" alt="Photo de profil de AKOUETE Kris">
+            </div>
+            <!-- Cercles décoratifs (points) visibles dans le design -->
+            <div class="hero-dots"></div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION À PROPOS ========== -->
+    <!-- ✅ CORRECTION 17 : id="apropos" pour que le lien du menu fonctionne. -->
+    <section class="about" id="apropos">
+        <div class="about-content">
+            <!-- ✅ CORRECTION 18 : Le titre de section doit commencer par une icône bleue
+                 comme dans le design. L'élève n'avait aucune icône devant les titres de section.
+                 On utilise <i class="fas fa-user"> dans le <h2>. -->
+            <h2><i class="fas fa-user"></i> À propos de moi</h2>
+
+            <p class="about-desc">
+                Je suis élève en classe de seconde et développeur
+                web débutant. J'apprends chaque jour et j'aime relever
+                des défis pour améliorer mes compétences.
+            </p>
+
+            <!-- ✅ CORRECTION 19 : Les informations personnelles doivent être dans une
+                 liste structurée <ul><li> avec des icônes, pas des <p><span> dispersés.
+                 Chaque ligne = icône bleue + étiquette en gras + valeur.
+                 C'est plus accessible et plus facile à lire et à maintenir. -->
+            <ul class="info-list">
+                <li>
+                    <i class="fas fa-user"></i>
+                    <span class="info-label">Nom :</span>
+                    <span>AKOUETE Kris</span>
+                </li>
+                <li>
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="info-label">Âge :</span>
+                    <span>16 ans</span>
+                </li>
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="info-label">Localisation :</span>
+                    <span>Lomé, Togo</span>
+                </li>
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    <span class="info-label">Email :</span>
+                    <span>krisakouete03@gmail.com</span>
+                </li>
+            </ul>
+
+            <a href="#" class="btn-primary">En savoir plus</a>
         </div>
 
-
-
-    </section>
-    <section class="about">
-        <h2>A propos de moi</h2>
-        <p>Je suis éleve en classe de second et développeur <br>web débutant. J'apprend chaque jour et j'aime relever
-            <br>des défis pour améliorer mes compétences.
-        </p>
-        <p><span>Nom:AKOUETE Kris</span><br></p>
-        <p><span>Âge: 16 ans</span><br></p>
-        <p><span>Location: Lomé, TOGO</span><br></p>
-        <p><span>Email: krisakouete03@gmail.com</span><br></p>
-        <nav class="plus"><a href="#">En savoir plus</a>
-        </nav>
-
-
-    </section>
-    <section class="competences">
-        <h3>Mes compétences</h3>
-        <div class="comp">
-            <ul><li>HTML:80%</li></ul>
-            <ul><li>CSS:70%</li></ul>
-            <ul><li>JavaScript:5%</li></ul>
-            <ul><li>Python90%</li></ul>
+        <!-- ✅ CORRECTION 20 : L'image "À propos" (ordinateur/environnement de travail)
+             était absente du code de l'élève. Le design montre une image à droite.
+             On la place dans un <div class="about-image"> pour lui appliquer le style. -->
+        <div class="about-image">
+            <img src="LWN.jpeg" alt="Environnement de travail">
         </div>
-        
-
-
-    </section>
-    <section class="projet">
-
-
     </section>
 
+    <!-- ========== SECTION COMPÉTENCES ========== -->
+    <!-- ✅ CORRECTION 21 : id="competences" pour la navigation par ancre. -->
+    <section class="competences" id="competences">
+        <!-- ✅ CORRECTION 22 : Titre avec icône <> (fa-code) comme dans le design. -->
+        <h2><i class="fas fa-code"></i> Mes compétences</h2>
 
+        <!-- ✅ CORRECTION 23 : LES COMPÉTENCES — C'est la partie la plus importante à corriger !
+             L'élève avait juste une liste <ul><li>HTML : 80%</li></ul> sans aucun style,
+             ce qui ne ressemble absolument pas au design.
 
+             Le design montre 4 cartes côte à côte, chacune contenant :
+             1. Une icône colorée (HTML=orange, CSS=bleu, JS=jaune, Python=bleu-vert)
+             2. Le nom de la technologie
+             3. Le pourcentage à droite
+             4. Une barre de progression bleue en bas
+
+             On utilise CSS Grid (dans le CSS) pour disposer les 4 cartes en ligne. -->
+        <div class="skills-grid">
+
+            <!-- Carte HTML5 -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <!-- L'icône est dans une boîte carrée arrondie de couleur orange -->
+                    <div class="skill-icon html-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <span class="skill-name">HTML</span>
+                    <span class="skill-percent">90%</span>
+                </div>
+                <!-- La largeur (width: 80%) dans style="" définit la progression.
+                     On peut changer ce nombre pour refléter le vrai niveau. -->
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 90%;"></div>
+                </div>
+            </div>
+
+            <!-- Carte CSS3 -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon css-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <span class="skill-name">CSS</span>
+                    <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 80%;"></div>
+                </div>
+            </div>
+
+            <!-- Carte JavaScript -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <!-- L'icône JS est jaune — on utilise la classe js-icon.
+                         Le texte doit être sombre (#333) sur fond jaune pour être lisible. -->
+                    <div class="skill-icon js-icon">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <span class="skill-name">JavaScript</span>
+                    <span class="skill-percent">60%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 60%;"></div>
+                </div>
+            </div>
+
+            <!-- Carte Python -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon py-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <span class="skill-name">Python</span>
+                    <span class="skill-percent">50%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 50%;"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== SECTION PROJETS ========== -->
+    <!-- ✅ CORRECTION 24 : La section projets était COMPLÈTEMENT VIDE dans le code de l'élève.
+         Le design montre 3 cartes de projets, chacune avec :
+         - Une miniature (image ou aperçu coloré)
+         - Un titre de projet
+         - Une description
+         - Un bouton "Voir le projet"
+         On utilise CSS Grid (3 colonnes) pour les disposer en ligne. -->
+    <section class="projets" id="projets">
+        <h2><i class="fas fa-briefcase"></i> Mes projets</h2>
+
+        <div class="projects-grid">
+
+            <!-- Projet 1 : Site de présentation avec image réelle -->
+            <div class="project-card">
+                <div class="project-thumbnail">
+                    <img src="portofolio.png" alt="Aperçu du site de présentation">
+                </div>
+                <div class="project-info">
+                    <h3>Site de présentation</h3>
+                    <p>Un site simple créé avec HTML et CSS pour présenter un produit.</p>
+                    <a href="#" class="btn-outline">Voir le projet</a>
+                </div>
+            </div>
+
+            <!-- Projet 2 : Application météo simulée avec CSS -->
+            <!-- ✅ CORRECTION 25 : Si l'on n'a pas d'image de l'appli météo,
+                 on peut créer un aperçu simulé avec du CSS et du texte.
+                 C'est mieux que de laisser un espace vide ou une image cassée. -->
+            <div class="project-card">
+                <div class="project-thumbnail project-weather">
+                    <p class="weather-temp">23°C</p>
+                    <p class="weather-city">Lomé</p>
+                    <p class="weather-date">Ensoleillé · Togo</p>
+                </div>
+                <div class="project-info">
+                    <h3>Application météo</h3>
+                    <p>Petite application météo qui affiche la température en utilisant JavaScript.</p>
+                    <a href="#" class="btn-outline">Voir le projet</a>
+                </div>
+            </div>
+
+            <!-- Projet 3 : To-Do List simulée avec CSS -->
+            <div class="project-card">
+                <div class="project-thumbnail project-todo">
+                    <p class="todo-title">Ma To-Do List</p>
+                    <!-- ✅ CORRECTION 26 : On ajoute une fausse barre de saisie
+                         pour simuler l'interface de l'appli comme dans le design. -->
+                    <div class="todo-input-fake">
+                        <span>Ajouter une tâche...</span>
+                        <button>+</button>
+                    </div>
+                    <ul class="todo-preview">
+                        <li><i class="fas fa-check-square" style="color:#1a6ef5;"></i> Apprendre le HTML</li>
+                        <li><i class="far fa-square"></i> Faire mes exercices</li>
+                    </ul>
+                </div>
+                <div class="project-info">
+                    <h3>To-Do List</h3>
+                    <p>Application de liste de tâches réalisée avec JavaScript.</p>
+                    <a href="#" class="btn-outline">Voir le projet</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== FOOTER / CONTACT ========== -->
+    <!-- ✅ CORRECTION 27 : Le footer était COMPLÈTEMENT ABSENT du code de l'élève.
+         Le design montre un footer sombre (bleu nuit) avec 3 colonnes :
+         - Colonne 1 : Infos de contact (localisation, email, téléphone)
+         - Colonne 2 : Liens rapides (navigation rapide vers les sections)
+         - Colonne 3 : Réseaux sociaux + texte d'invitation
+
+         On utilise id="contact" sur le <footer> pour que le lien "Contact"
+         du menu fasse défiler jusqu'ici. -->
+    <footer id="contact">
+        <div class="footer-grid">
+
+            <!-- Colonne 1 : Informations de contact -->
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Lomé, Togo</p>
+                <p><i class="fas fa-envelope"></i> krisakouete03@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +228 XX XX XX XX</p>
+            </div>
+
+            <!-- Colonne 2 : Liens rapides (répète la navigation)
+                 ✅ CORRECTION 28 : Chaque lien doit pointer vers la bonne ancre.
+                 Le "›" devant chaque lien est ajouté en CSS avec ::before,
+                 pas en HTML directement. C'est une bonne pratique CSS. -->
+            <div class="footer-col">
+                <h4>Liens rapides</h4>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#apropos">À propos</a></li>
+                    <li><a href="#competences">Compétences</a></li>
+                    <li><a href="#projets">Projets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3 : Réseaux sociaux -->
+            <div class="footer-col">
+                <h4>Suivez-moi</h4>
+                <div class="footer-social">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p class="footer-note">N'hésitez pas à me contacter pour toute collaboration !</p>
+                <!-- ✅ CORRECTION 29 : Le cœur visible dans le design sous le texte.
+                     C'est un détail visuel ajouté avec une icône Font Awesome. -->
+                <div class="footer-heart">
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Ligne de copyright tout en bas du footer -->
+        <div class="footer-bottom">
+            <p>© 2024 AKOUETE Kris — Tous droits réservés.</p>
+        </div>
+    </footer>
 
 </body>
 
